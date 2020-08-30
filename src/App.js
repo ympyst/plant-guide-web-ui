@@ -1,6 +1,7 @@
 import React, {useEffect, useCallback} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 import { load, select, selectFromHistory } from './app/plantkey';
+import Container from 'react-bootstrap/Container';
 import { Selection } from './features/selection/Selection';
 import { Taxon } from './features/taxon/Taxon';
 import { History } from './features/history/History';
@@ -23,12 +24,12 @@ function App() {
     );
     
     return (
-        <div className="App">
+        <Container className="App">
           <h1>Определитель семейств</h1>
             {!keysLoaded && <div>Loading...</div>}
-            {keysLoaded && <div className="historyContainer"><History history={history} selectCallback={selectCallback}/></div>}
-            {keysLoaded && <SelectionContainer/>}
-        </div>
+            {keysLoaded && <div className="selection"><SelectionContainer/></div>}
+            {keysLoaded && <History history={history} selectCallback={selectCallback}/>}
+        </Container>
     );
 }
 
