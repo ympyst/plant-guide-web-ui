@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import styles from './Selection.module.css';
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 export function Selection(props) {
     return (
@@ -18,15 +19,15 @@ export function Selection(props) {
 function Thesis(props) {
     const {selectCallback, ...selectParams } = props;
     return (
-        <Card onClick={() => selectCallback(selectParams)} bg="light">
-            <Card.Body>
-                <Card.Text>
+        <Jumbotron>
+            <p>
+                <div>
                     {props.thesis}
-                </Card.Text>
-                <div className="text-center">
-                    <Button>Выбрать</Button>
                 </div>
-            </Card.Body>
-        </Card>
+            </p>
+                <div className="text-center">
+                    <Button onClick={() => selectCallback(selectParams)}>Выбрать</Button>
+                </div>
+        </Jumbotron>
     );
 }
