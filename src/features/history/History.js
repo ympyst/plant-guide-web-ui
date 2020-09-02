@@ -1,8 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import styles from './History.module.css';
 import Table from 'react-bootstrap/Table';
+import styles from './History.module.css';
 
 export function History(props) {
     const items = props.history.slice(0).reverse().map((h) => <HistoryItem {...h} selectCallback={props.selectCallback} key={h.id}/>);
@@ -10,10 +9,10 @@ export function History(props) {
     return (
         <div>
             {hasHistory && <h3>История выбора</h3>}
-            <Table className={styles.item} bg="success" variant='light'>
-                <tbody>
-                    {items}
-                </tbody>
+            <Table variant='light'>
+               <tbody>
+                   {items}
+               </tbody>
             </Table>
         </div>
     );
