@@ -1,10 +1,10 @@
 import React, {useEffect, useCallback} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
-import { load, select, selectFromHistory } from './app/plantkey';
+import { load, select, selectFromHistory } from './app/plantkey/plantkey.js';
 import Container from 'react-bootstrap/Container';
-import { Selection } from './features/selection/Selection';
-import { Taxon } from './features/taxon/Taxon';
-import { History } from './features/history/History';
+import { Selection } from './features/selection/Selection.js';
+import { Taxon } from './features/taxon/Taxon.js';
+import { History } from './features/history/History.js';
 import './App.css';
 
 function App() {

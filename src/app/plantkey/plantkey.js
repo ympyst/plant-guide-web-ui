@@ -22,9 +22,9 @@ export const plantKeySlice = createSlice({
                     }
                     state.keys[k.selection_id].push(k);
                 });
+                state.loaded = true;
+                state.currentSelectionId = 1;
             }
-            state.loaded = true;
-            state.currentSelectionId = 1;
         },
         select: (state, action) => {
             state.selectionHistory.push(action.payload);
