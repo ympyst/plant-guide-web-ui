@@ -1,10 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This project is intended for all interested in botany. Application helps to identify the plants of the middle part of Russia.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start-dev`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -26,6 +26,13 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm start`
+
+Starts serving the app in the production mode.<br />
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+
+Production build must be available in the `build` folder – run `npm run build` before `npm start`.
 
 ### `npm run eject`
 
