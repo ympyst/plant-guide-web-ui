@@ -1,13 +1,19 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 import styles from './History.module.css';
 
 export function History(props) {
     const items = props.history.slice(0).reverse().map((h) => <HistoryItem {...h} selectCallback={props.selectCallback} key={h.id}/>);
+    const hasHistory = items.length > 0;
     return (
         <div>
-            <h3>История выбора</h3>
-            {items}
+            {hasHistory && <h3>История выбора</h3>}
+            <Table variant='light'>
+               <tbody>
+                   {items}
+               </tbody>
+            </Table>
         </div>
     );
 }
@@ -15,10 +21,11 @@ export function History(props) {
 function HistoryItem(props) {
     const {selectCallback, ...selectParams } = props;
     return (
-        <Card className={styles.item} onClick={() => selectCallback(selectParams)} bg="success">
-            <Card.Body>
-                <Card.Text>{props.thesis}</Card.Text>
-            </Card.Body>
-        </Card>
+        <tr>
+            <td>{props.thesis}</td>
+            <td>
+                 <Button onClick={() => selectCallback(selectParams)} size="sm" variant="outline-info"> → </Button> 
+            </td>
+        </tr>
     );
 }

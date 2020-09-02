@@ -1,3 +1,6 @@
+.App {
+    font-family: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
 .selection {
     margin-bottom: 20px;
 }
